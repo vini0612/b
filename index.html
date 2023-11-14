@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oi</title>
+
+    <!-- saiba q vc é muito esquisita se veio ver o código, beijo -->
+
+    <style> 
+        body {
+            background-color: rgb(204, 142, 7);
+            text-align: center;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 12px 24px; 
+            width: 180px;
+            height: 50px;
+            border-radius: 8px;
+            background-color: #2E8B57;
+            color: white;
+            border: none;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        img {
+            width: 80%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>casa cmg?</h1>
+
+    <a href="b.html" target="_blank">
+        <button onclick="playAudio()">Sim</button>
+    </a>
+    
+    <button id="nao" onclick="mudarPosicao()">Não</button>
+
+    <br> <br>
+
+    <img src="acabaxi.png" alt="Coração">
+
+    <audio id="audioSim" src="hjsim.mp3"></audio>
+    <audio id="audioNao" src="hojenao.mp3"></audio>
+
+    <script>
+        function mudarPosicao() {
+            var button = document.getElementById("nao");
+            var novaPosicaoTop = Math.floor(Math.random() * 90) + 1; 
+            var novaPosicaoLeft = Math.floor(Math.random() * 90) + 1; 
+            button.style.position = "absolute";
+            button.style.top = novaPosicaoTop + "%"; 
+            button.style.left = novaPosicaoLeft + "%";
+
+            var audioNao = document.getElementById("audioNao");
+            audioNao.play();
+        }
+
+        function playAudio() {
+            var audioSim = document.getElementById("audioSim");
+            audioSim.play();
+        }
+
+        var buttonNao = document.getElementById("nao");
+        buttonNao.style.cursor = "pointer";
+    </script>
+</body>
+
+</html>
